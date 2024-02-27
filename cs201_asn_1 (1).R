@@ -72,27 +72,20 @@ print(tic_tac_toe)
 # and generate a bar plot of dice sum frequencies with the axis labels 
 # shown below.
 
-die1 <- sample(1:6, 1000, replace = TRUE) # Generate 1000 integers from 1-6 inclusive to represent the 1000 rolls for teh first die
-die2 <-sample(1:6, 1000, replace = TRUE) # do the same for the second die
+die1 <- sample(1:6, 1000, replace = TRUE)
+die2 <-sample(1:6, 1000, replace = TRUE)
   
-dice_sums <- die1 + die2 # Vector to holed the sums of the 1000 dice 
+dice_sums <- die1 + die2 
+
+sum_freq_table <- table(dice_sums) 
 
 
-sum_freq_table <- table(dice_sums) # Table of frequencies
-
-
-print(sum_freq_table) # Display the frequency table
-
-# Task 4 continued: Generate a bar plot of dice sum frequencies
-
-# Plotting the bar plot
-#print(barplot(sum_freq_table, main = "Dice Sum Frequencies", xlab = "Dice sums", ylab = "Occurrences", col = "gray"))
+print(sum_freq_table) 
 
 barplot(sum_freq_table, 
         main = "Dice Sum Frequencies", 
         xlab = "Dice Sums", 
         ylab = "Occurrences", 
         col = "gray",
-        ylim = c(0, 200),  # Set custom y-axis limits (adjust as needed)
-        names.arg = unique(dice_sums))  # Display unique dice sums on the x-axis
-
+        ylim = c(0, 200),  
+        names.arg = unique(dice_sums))  
